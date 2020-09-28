@@ -1,12 +1,17 @@
-class Dog < ActiveRecord::Base
 
-    # attr_accessor :name, :breed, :age
-    # @@all = []
-    # def initialize(name, breed, age)
-    #     @age = age
-    #     @breed = breed
-    #     @age = age
-    #     @@all < self
-    # end
+class Dog
+
+    attr_accessor :name, :breed, :age
+    @@all = []
+    def initialize(name, breed, age)
+        @name = name
+        @age = age
+        @breed = breed
+        @@all << self
+    end
+
+    def self.all
+        @@all
+    end
 
 end
